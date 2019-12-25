@@ -5,7 +5,7 @@
 Add the following line to your .bashrc file:
 
 ```
-. /path-to-script/b
+. /path-to-script/b.bash
 ```
 
 ### Usage
