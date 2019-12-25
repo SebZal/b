@@ -12,11 +12,11 @@ Add the following line to your .bashrc file:
 
 Display help: ```b``` or ```b -h```
 
-Add current directory as bookmark with reference `<`ref`>`: ```b -c <ref>```
+Add current directory as bookmark with reference _ref_: ```b -c ref```
 
-Delete bookmark with reference `<`ref`>`: ```b -d <ref>```
+Delete bookmark with reference _ref_: ```b -d ref```
 
-Change directory to the path pointed by the given reference: ```b <ref>```
+Change directory to the path pointed by reference _ref_: ```b ref```
 
 List all bookmarks: ```b -l```
 
