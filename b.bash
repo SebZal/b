@@ -2,12 +2,12 @@
 
 # A Linux file system bookmark manager.
 
-BOOKMARK_DIR=$HOME/.config/b
-BOOKMARK_PATH=$BOOKMARK_DIR/bookmarks
+B_BOOKMARK_DIR=$HOME/.config/b
+B_BOOKMARK_PATH=$B_BOOKMARK_DIR/bookmarks
 
 _b_print_help() {
     echo "b - A Linux file system bookmark manager."
-    echo "Bookmarks are stored in $BOOKMARK_PATH"
+    echo "Bookmarks are stored in $B_BOOKMARK_PATH"
     echo
     echo "<ref>     Change directory to the path pointed by the given reference."
     echo "-h        Print this message."
@@ -17,14 +17,14 @@ _b_print_help() {
 }
 
 _b_delete_bookmark() {
-    sed -i "/^$1 / d" $BOOKMARK_PATH
+    sed -i "/^$1 / d" $B_BOOKMARK_PATH
 }
 
 b() {
-    if [ ! -f $BOOKMARK_PATH ]
+    if [ ! -f $B_BOOKMARK_PATH ]
     then
-        mkdir -p $BOOKMARK_DIR
-        touch $BOOKMARK_PATH
+        mkdir -p $B_BOOKMARK_DIR
+        touch $B_BOOKMARK_PATH
     fi
     
     if [ "$1" = "-c" ] || [ "$1" = "-d" ]
@@ -38,20 +38,20 @@ b() {
         if [ $1 == "-c" ]
         then
             _b_delete_bookmark $2
-            echo "$2 $(pwd)" >> $BOOKMARK_PATH
+            echo "$2 $(pwd)" >> $B_BOOKMARK_PATH
         else
             _b_delete_bookmark $2
         fi
     elif [ "$1" = "-l" ]
     then
         tab="\t"
-        cat $BOOKMARK_PATH | sed "s/ /$tab$tab/"
+        cat $B_BOOKMARK_PATH | sed "s/ /$tab$tab/"
     elif [ "$1" = "-h" ]
     then
         _b_print_help
     elif [ $# != 0 ]
     then
-        match=$(sed -n "s/^$1 //p" $BOOKMARK_PATH)
+        match=$(sed -n "s/^$1 //p" $B_BOOKMARK_PATH)
         if [ -n "$match" ]
         then
             cd $match
