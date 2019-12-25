@@ -5,40 +5,20 @@
 Add the following line to your .bashrc file:
 
 ```
-. /path-to-script/b.bash
+. /script-directory/b.bash
 ```
 
 ### Usage
 
-Display help:
+Display help: ```b``` or ```b -h```
 
-```
-b
-```
-or
-```
-b -h
-```
+Add current directory as bookmark with reference `<`ref`>`: ```b -c <ref>```
 
-Add current directory as bookmark with reference <ref>:
-```
-b -c <ref>
-```
+Delete bookmark with reference `<`ref`>`: ```b -d <ref>```
 
-Delete bookmark with reference <ref>:
-```
-b -d <ref>
-```
+Change directory to the path pointed by the given reference: ```b <ref>```
 
-Change directory to the path pointed by the given reference:
-```
-b <ref>
-```
-
-List all bookmarks:
-```
-b -l
-```
+List all bookmarks: ```b -l```
 
 ### Dependencies
 
