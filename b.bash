@@ -44,8 +44,8 @@ b() {
         fi
     elif [ "$1" = "-l" ]
     then
-        TAB="\t"
-        cat $BOOKMARK_PATH | sed "s/ /$TAB$TAB/"
+        tab="\t"
+        cat $BOOKMARK_PATH | sed "s/ /$tab$tab/"
     elif [ "$1" = "-h" ]
     then
         _b_print_help
