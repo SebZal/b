@@ -54,7 +54,7 @@ b() {
         match=$(sed -n "s/^$1 //p" $B_BOOKMARK_PATH)
         if [ -n "$match" ]
         then
-            cd $match
+            cd "$match"
         else
             echo "Bookmark not found."
         fi
